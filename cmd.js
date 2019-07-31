@@ -15,7 +15,7 @@ function runCommand(command){
 function getString(command,callback){
     //return refrence to the child process
     return exec(
-        command,
+        command, {maxBuffer: 1024 * 20000}, 
         (
             function(){
                 return function(err,data,stderr){
